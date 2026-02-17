@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorios de Innovación Ciudadana</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1>Laboratorios de Innovación Ciudadana</h1>
+        <div class="header-controls">
+            <input type="text" id="search-input" placeholder="Buscar laboratorio..." aria-label="Buscar laboratorio" autocomplete="off">
+            <select id="country-filter" aria-label="Filtrar por país">
+                <option value="">Todos los países</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="app-body">
+        <aside class="side-panel" id="side-panel">
+            <button class="panel-toggle" id="panel-toggle" aria-label="Colapsar panel">&#8249;</button>
+            <div class="panel-header">
+                <span class="results-count" id="results-count"></span>
+            </div>
+            <ul class="lab-list" id="lab-list"></ul>
+        </aside>
+
+        <div id="map" role="application" aria-label="Mapa de laboratorios ciudadanos"></div>
+    </div>
+
+    <!-- Modal / Bottom Sheet -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" id="modal-close" aria-label="Cerrar">&times;</button>
+            <div class="modal-content" id="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
